@@ -42,3 +42,9 @@ def lenet(lmdb, batch_size):
     n.loss = L.SoftmaxWithLoss(n.score, n.label)
 
     return n.to_proto()
+
+with open('mnist/lenet_auto_train.prototxt', 'w') as f:
+    f.write(str(lenet('mnist/mnist_train_lmdb', 64)))
+
+with open('mnist/lenet_auto_test.prototxt', 'w') as f:
+    f.write(str(lenet('mnist/mnist_test_lmdb', 100)))
