@@ -9,3 +9,10 @@ caffe_root = '../'
 sys.path.insert(0, caffe_root + 'python')
 
 import caffe
+
+import os
+if os.path.isfile(caffe_root + 'models/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel'):
+    print('CaffeNet found.')
+else:
+    print('Downloading pre-trained CaffeNet model...')
+    # !../scripts/download_model_binary.py ../models/bvlc_reference_caffenet
