@@ -1,2 +1,1 @@
-
-cd ~/caffe
+cd ~/caffe/examples
