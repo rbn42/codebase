@@ -31,7 +31,7 @@ Item{
     property var border_shadow_active: 1
     property var border_shadow_deactive:5
 
-    property var enable_shadow:true
+    property var enable_shadow:false
     property var shadow_color:"white"
     property var shadow_spread:0.7
     property var shadow_radius:7
