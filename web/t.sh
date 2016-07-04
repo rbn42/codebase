@@ -18,8 +18,8 @@ from pyquery import PyQuery as pq
 l=[]
 for p in sys.argv[1:]:
     for i in re.findall('<a.+?</a>',open(p).read()):
-        i=pq(i).text()
-        if '桌面' in i:
+        i=pq(i).text()[2:]
+        if '桌' in i:
             l.append(i)
             print(i)
 cache='/dev/shm/jklasdfjsd_cache'
