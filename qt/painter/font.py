@@ -28,11 +28,7 @@ class Example(QWidget):
 
     def initUI(self):
 
-        self.text = u'\u041b\u0435\u0432 \u041d\u0438\u043a\u043e\u043b\u0430\
-\u0435\u0432\u0438\u0447 \u0422\u043e\u043b\u0441\u0442\u043e\u0439: \n\
-\u0410\u043d\u043d\u0430 \u041a\u0430\u0440\u0435\u043d\u0438\u043d\u0430'
-
-        self.setGeometry(300, 300, 280, 170)
+        self.setGeometry(300, 300, 780, 770)
         self.setWindowTitle('Draw text')
         self.show()
 
@@ -45,9 +41,21 @@ class Example(QWidget):
 
     def drawText(self, event, qp):
 
+        text = """
+        一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三一二三
+        112233112233112233112233112233112233112233112233112233112233112233112233
+        aabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbccaabbcc
+        1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 
+        a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c a b c 
+        """
         qp.setPen(QColor(168, 34, 3))
-        qp.setFont(QFont('Decorative', 10))
-        qp.drawText(event.rect(), Qt.AlignCenter, self.text)
+        family = "WenQuanYi Micro Hei Mono"
+        family = "monospace"
+        family = "monaco,WenQuanYi Micro Hei Mono"
+        f = QFont(family, 20)
+        f.setUnderline(True)
+        qp.setFont(f)
+        qp.drawText(event.rect(), Qt.AlignCenter, text)
 
 
 if __name__ == '__main__':
